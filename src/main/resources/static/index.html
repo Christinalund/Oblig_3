@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>Bestilling av kinobilletter</title>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="bestilling.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>Bestill kinobilletter</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <form class="form">
+                <input type="hidden" id="id"/>
+                    <!-- Dropdown menu for selecting a movie -->
+                    <div class="form-group">
+                        <label for="film">Velg film:</label>
+                        <select name="film" class="form-control" id="film" required>
+                            <!-- Non-clickable option that is hidden when selected so the dropdown displays that instead of the first movie on the list -->
+                            <option hidden disabled selected value>Velg film her</option>
+                            <option value="Titanic">Titanic</option>
+                            <option value="Me Before You">Me Before You</option>
+                            <option value="Christmas again">Christmas again</option>
+                            <option value="Barbie">Barbie</option>
+                            <option value="Past Lives">Past Lives</option>
+                            <option value="Poor Things">Poor Things</option>
+                            <option value="Oppenheimer">Oppenheimer</option>
+                        </select>
+                    </div>
+                <div class="form-group">
+                    <label for="antall">Antall: </label>
+                    <input type="number" id="antall"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="fornavn">Fornavn: </label>
+                    <input type="text" class="form-control" id="fornavn" onchange="validerFornavn()"/>
+                    <span id="feilFornavn" style="color: red"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="etternavn">Etternavn: </label>
+                    <input type="text" class="form-control" id="etternavn"  onchange="validerEtternavn()"/>
+                    <span id="feilEtternavn" style="color: red"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefonnr">Telefonnr: </label>
+                    <input type="text" class="form-control" id="telefonnr" onchange="validerTelefonnr()"/>
+                    <span id="feilTelefonnr" style="color: red"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="epost">Epost: </label>
+                    <input type="text" class="form-control" id="epost" onchange="validerEpost()"/>
+                    <span id="feilEpost" style="color: red"></span>
+                </div>
+
+                <div class="form-group">
+                    <button onclick="bestilling()" class="btn btn-primary">Kjøp billett</button><br/>
+                </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-group">
+                <h4>Alle billetter:</h4>
+                <div id="billettene" class="table-responsive"></div>
+                <button onclick="slettAlleBilletter()" class="btn btn-danger">Slett alle billettene</button>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
