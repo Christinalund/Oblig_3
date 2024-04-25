@@ -6,6 +6,8 @@ Github brukernavn: christinalund
 
 Github repo URL: https://github.com/Christinalund/Oblig_3.git 
 
+Youtube video link: https://youtu.be/P7nwB15NLww
+
 Fullt navn: Christina Lund
 
 Kort beskrivelse av applikasjon (5-10 setninger):
